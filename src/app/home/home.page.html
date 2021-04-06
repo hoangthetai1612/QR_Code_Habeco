@@ -1,20 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header class="logo">
+  <img src="assets/logo.png" alt="">
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-button expand="block" color="medium" (click)="qrScan()">Tải ảnh từ máy</ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-button expand="block" color="Primary" name="close" *ngIf="scanActive">Stop</ion-button>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        QR Code
+      </ion-card-title>
+      <ion-card-content>
+        {{scanResult}}
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
+
+<ion-footer class="footer">
+  <img src="assets/logo.png" alt="">
+  <p>
+    TỔNG CÔNG TY CỔ PHẦN BIA - RƯỢU - NƯỚC GIẢI KHÁT HÀ NỘI
+  </p>
+</ion-footer>
